@@ -42,6 +42,9 @@ import com.naver.maps.map.overlay.Marker;
 import com.naver.maps.map.overlay.OverlayImage;
 import com.naver.maps.map.overlay.Align;
 
+import android.content.res.Resources;
+import android.util.DisplayMetrics;
+
 public class RNNaverMapMarker extends ClickableRNNaverMapFeature<Marker> implements TrackableView {
     private final DraweeHolder<GenericDraweeHierarchy> imageHolder;
     private boolean animated = false;
@@ -147,13 +150,21 @@ public class RNNaverMapMarker extends ClickableRNNaverMapFeature<Marker> impleme
     public void setHeight(int height) {
         feature.setHeight(height);
     }
+    
+    public int px2dp(int px){
+        Resources resources = getContext().getResources();
+        DisplayMetrics metrics = resources.getDisplayMetrics();
+        float dp = px * ((float) metrics.density);
+
+        return (int) dp;
+    }
 
     public void setCaption(String text, int textSize, int color, int haloColor, int offset, Align... aligns) {
         feature.setCaptionText(text);
         feature.setCaptionTextSize(textSize);
         feature.setCaptionColor(color);
         feature.setCaptionHaloColor(haloColor);
-        feature.setCaptionOffset(offset);
+        feature.setCaptionOffset(px2dp(offset));
         feature.setCaptionAligns(aligns);
     }
 
