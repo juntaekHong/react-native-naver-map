@@ -22,6 +22,6 @@ public class RNNaverMapViewTextureManager extends RNNaverMapViewManager {
         return new NaverMapOptions()
                 .useTextureView(true)
                 .translucentTextureSurface(true)
-                .camera(new CameraPosition(new LatLng(37.55244122367603, 127.00885878051605), 14));
+                .camera(new CameraPosition(new LatLng(37.55244417452413, 127.0048582595204), 16.8));
     }
 }
