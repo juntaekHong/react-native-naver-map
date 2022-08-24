@@ -37,11 +37,11 @@
     _reactSubviews = [NSMutableArray new];
   }
   
-  NMFCameraUpdate *cameraPositionUpdate = [NMFCameraUpdate cameraUpdateWithScrollTo:NMGLatLngMake(37.55244122367603, 127.00885878051605)];
+  NMFCameraUpdate *cameraPositionUpdate = [NMFCameraUpdate cameraUpdateWithScrollTo:NMGLatLngMake(37.55244417452413, 127.0048582595204)];
   cameraPositionUpdate.animation = NMFCameraUpdateAnimationNone;
   [self.mapView moveCamera:cameraPositionUpdate];
   
-  NMFCameraUpdate *cameraZoomUpdate = [NMFCameraUpdate cameraUpdateWithZoomTo: 14.0];
+  NMFCameraUpdate *cameraZoomUpdate = [NMFCameraUpdate cameraUpdateWithZoomTo: 16.8];
   cameraZoomUpdate.animation = NMFCameraUpdateAnimationNone;
   [self.mapView moveCamera:cameraZoomUpdate];
   
